@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>My AI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    #chat {
+      border: 1px solid #ccc;
+      height: 300px;
+      padding: 10px;
+      overflow-y: auto;
+      margin-bottom: 10px;
+    }
+    input {
+      width: 75%;
+      padding: 8px;
+    }
+    button {
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>My AI Chat</h2>
+
+  <div id="chat">
+    <p><b>AI:</b> Hello! I’m your AI.</p>
+  </div>
+
+  <input id="message" placeholder="Type here..." />
+  <button onclick="sendMessage()">Send</button>
+
+  <script>
+    function sendMessage() {
+      const input = document.getElementById("message");
+      const chat = document.getElementById("chat");
+
+      if (input.value === "") return;
+
+      chat.innerHTML += "<p><b>You:</b> " + input.value + "</p>";
+      input.value = "";
+      chat.scrollTop = chat.scrollHeight;
+    }
+  </script>
+
+</body>
+</html>
